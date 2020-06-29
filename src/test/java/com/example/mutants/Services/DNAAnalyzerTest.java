@@ -15,6 +15,7 @@ import static org.junit.Assert.assertTrue;
 import com.example.mutants.MockConstants;
 import com.example.mutants.DAO.MutantsDAO;
 import com.example.mutants.DAO.StatsDao;
+import com.example.mutants.Entities.Stats;
 import com.example.mutants.Interfaces.IDNAAnalyzerService;
 @TestPropertySource(locations = {"classpath:application.properties"})
 @ContextConfiguration
@@ -49,5 +50,15 @@ public class DNAAnalyzerTest {
 	@Test
 	public void isMutantDnaError() {
 		assertTrue(!dnaAService.PurifyTreatment(MockConstants.ERRORDNA));
+	}
+	@Test
+	public void isPostDNA() {
+		String dnatoString=dnaAService.ConvertDNAArrayToString(MockConstants.HORIZONTALDNA);		
+	}
+	@Test
+	public void GetStats() {
+		Stats stats=new Stats(0,0);
+		stats=dnaAService.getStats();
+		
 	}
 }
