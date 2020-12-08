@@ -39,7 +39,7 @@ Especificaciones TECNICAS
 POST http://mutants-env-1.eba-baxnbsjr.us-east-2.elasticbeanstalk.com/mutant
 
 Request Body {“
-dna”:["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
+dna”:["ATGCGA","CAGTGC","TTATGT","AGAAGG","TTTTCA","TCACTG"]
 }
 
 
@@ -51,12 +51,10 @@ Response  - 200 OK
 POST: http://mutants-env-1.eba-baxnbsjr.us-east-2.elasticbeanstalk.com/mutant
 
 Request Body {“
-dna”:["ATGCGA", "CTGTTC", "TTATTT", "AGAATG", "CCTCTA", "TCACTG"]
+dna”:["ATGCGA", "CTGTTC", "TTATTC", "AGAATG", "TCTCTA", "TCACTG"]
 }
 
-RESPONSE 403- {
-    "message": "Mutant DNA detected! Access Granted"
-}
+RESPONSE 403- 
 
 
  * Caso Validar DNA
@@ -64,7 +62,7 @@ RESPONSE 403- {
 POST: http://mutants-env-1.eba-baxnbsjr.us-east-2.elasticbeanstalk.com/mutant
 
 Request Body {“
-dna”:["ATGCGA", "CTGTGC", "TTZTGT", "AGAATG", "CXCCTA", "TCACTG"]
+dna”:["ATGCGA", "CTGTGC", "TTZTGT", "AGAATG", "CVCCTA", "TCACTG"]
 }
      Response  - 403 -  {
     "message": "
