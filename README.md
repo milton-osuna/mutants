@@ -44,6 +44,9 @@ dna”:["ATGCGA","CAGTGC","TTATGT","AGAAGG","TTTTCA","TCACTG"]
 
 
 Response  - 200 OK
+{
+"message": "Mutant DNA detected! Access Granted"
+}
 
 
 * Caso HUMANO DNA
@@ -51,11 +54,13 @@ Response  - 200 OK
 POST: http://mutants-env-1.eba-baxnbsjr.us-east-2.elasticbeanstalk.com/mutant
 
 Request Body {“
-dna”:["ATGCGA", "CTGTTC", "TTATTC", "AGAATG", "TCTCTA", "TCACTG"]
+dna”:["ATTCGA","CTGTAC","TTATAC","AGAAGG","TCTCAA","TCACTG" ]
 }
 
 RESPONSE 403- 
-
+{
+    "message": "Not Mutant DNA detected, access Denied!"
+}
 
  * Caso Validar DNA
 
@@ -74,7 +79,7 @@ Error! Contaminated DNA, test again."}
 
 * GET : http://mutants-env-1.eba-baxnbsjr.us-east-2.elasticbeanstalk.com/stats/
 Response 200 OK- 
-{"count_mutant_dna":2,"count_human_dna":1,"ratio":0.6666667}
+{"count_mutant_dna":4,"count_human_dna":1,"ratio":0.8}
 
 
 
